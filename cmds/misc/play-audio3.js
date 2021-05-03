@@ -1,5 +1,5 @@
-const Commando = require('discord.js-commando')
-const path = require('path')
+const Commando = require('discord.js-commando');
+const path = require('path');
 
 module.exports = class PlayAudioCommand extends Commando.Command {
     constructor(client) {
@@ -8,7 +8,7 @@ module.exports = class PlayAudioCommand extends Commando.Command {
             group: 'misc',
             memberName: 'dang',
             description: 'Play some audio',
-        })
+        });
     }
 
     async run(message) {
@@ -23,7 +23,7 @@ module.exports = class PlayAudioCommand extends Commando.Command {
             const sound = connection.play(path.join(__dirname, 'dang_ori.m4a'));
             sound.on('finish', () => {
                 connection.disconnect();
-            });
+            })
         });
 
         
